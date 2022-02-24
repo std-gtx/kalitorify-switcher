@@ -27,4 +27,6 @@
   make install
   
 --USAGE
-  python3 switch.py -c <country>
+  python3 switch.py -c <country> -speed <sleep between circuit change>
+  
+  For faster switching use speed 0, for avoiding errors or for slow systems use speed 10.
