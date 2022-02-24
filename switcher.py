@@ -89,7 +89,7 @@ def switch():
         output = file.read().replace('\n', '')
     again = output.find(country)
     if again == -1:
-        print('oops')
+        print(f'Mmm, this one isn´t in {country}')
         for i in range(0, speed_custom):
             barrita(10)
             barrita(10)
