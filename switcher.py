@@ -36,7 +36,8 @@ def barrita(tiempo):
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('-c', required=True, help="shows now")
+parser.add_argument('-c', required=True, help="country to search")
+parser.add_argument('--speed', required=False, help="sleep between circuit connection [0 fast, 10 slow]")
 
 args = parser.parse_args()
 
@@ -84,3 +85,18 @@ def switch():
         switch()
 switch()
 print(f'You´re now connected to {country}!')
+#with open('tor.temp', 'r') as file:
+#    output = file.read().replace('\n', '')
+#again = output.find(country)
+#print(again)  
+#if again == -1:
+#    print('oops')
+#    barrita(10)
+#    barrita(10)
+    
+
+#
+#for i in range(0,1):
+#    print(bar[i % len(bar)], end="\r")
+#    time.sleep(.2) # time per frame
+#    i += 1
