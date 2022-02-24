@@ -46,7 +46,7 @@ country = str(args.c).capitalize()
 try:
     speed_custom = int(args.speed)
 except:
-    speed_custom = 0
+    speed_custom = 1
     print('Using default speed [10x2]')
 
 print('''  ____         
