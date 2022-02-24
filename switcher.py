@@ -3,6 +3,7 @@
 from os import system as shell
 import time
 import argparse
+from turtle import speed
 
 shell('clear')
 
@@ -37,12 +38,16 @@ def barrita(tiempo):
 parser = argparse.ArgumentParser()
 
 parser.add_argument('-c', required=True, help="country to search")
-parser.add_argument('--speed', required=False, help="sleep between circuit connection [0 fast, 10 slow]")
+parser.add_argument('-speed', required=False, help="sleep between circuit connection [0 fast, 10 slow]")
 
 args = parser.parse_args()
 
 country = str(args.c).capitalize()
-
+try:
+    speed_custom = int(args.speed)
+except:
+    speed_custom = 0
+    print('Using default speed [10x2]')
 
 print('''  ____         
  |  _ \        
@@ -80,8 +85,9 @@ def switch():
     again = output.find(country)
     if again == -1:
         print('oops')
-        barrita(10)
-        barrita(10)
+        for i in range(0, speed_custom):
+            barrita(10)
+            barrita(10)
         switch()
 switch()
 print(f'You´re now connected to {country}!')
