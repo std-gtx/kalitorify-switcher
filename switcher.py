@@ -7,7 +7,7 @@ from turtle import speed
 
 shell('clear')
 
-blacklist = ['spain']
+blacklist = ['Spain']
 
 bar = [
     "[=         ]",
