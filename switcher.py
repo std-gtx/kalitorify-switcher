@@ -7,6 +7,8 @@ from turtle import speed
 
 shell('clear')
 
+blacklist = ['spain']
+
 bar = [
     "[=         ]",
     "[ =        ]",
@@ -68,7 +70,10 @@ print('''  ____
 ''')
 
 print(f'Finding a circuit ending in {country}')
-
+if country in blacklist:
+    print('Are you sure? You may die before you find a circuit ending on this country...')
+    print('Please dont waste your time')
+    exit()
 print('Stoping Tor service...')
 shell('service tor stop')
 print('Starting connection...')
